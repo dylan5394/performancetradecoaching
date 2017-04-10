@@ -1,0 +1,35 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'payments/style.css' %}" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <div class="navbar">
+        <div id="logo">
+            <a href="/payments">
+                <img src="{% static "images/ptc_logo.png" %}" />
+            </a>
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="/payments">Home</a></li>
+                <li><a href="/payments/company">Company</a></li>
+                <li><a href="/payments/about">About</a></li>
+                <li><a href="/payments/blog">Blog</a></li>
+                <li><a href="/payments/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="timed-images">
+
+    </div>
+    <hr>
+    <div>
+        <button>Facebook link</button>
+    </div>
+</body>
+</html>
