@@ -21,6 +21,11 @@
                 <li><a href="/payments/about">About</a></li>
                 <li><a href="/payments/blog">Blog</a></li>
                 <li><a href="/payments/contact">Contact</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="/payments/logout_request">Log Out {{ user }}</a></li>
+                {% else %}
+                    <li><a href="/payments/loginform">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>
@@ -28,6 +33,7 @@
 
     </div>
     <hr>
+    {% block content %}{% endblock content %}
     <div>
         <button>Facebook link</button>
     </div>
