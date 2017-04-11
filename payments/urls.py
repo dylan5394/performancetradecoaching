@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^contact$', views.contact, name='contact'),
     url(r'^login$', views.loginrequest, name='loginrequest'),
     url(r'^loginform$', views.loginpage, name='loginpage'),
-    url(r'^logout_request$', views.logout_request, name='logoutrequest')
+    url(r'^logout_request$', views.logout_request, name='logoutrequest'),
+    url(r'^create_account$', views.create_account, name='createaccount'),
 ]

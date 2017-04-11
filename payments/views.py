@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
+from payments.models import Account
 
 
 def index(request):
@@ -44,3 +45,11 @@ def logout_request(request):
     logout(request)
     return render(request, 'payments/index.html', None)
 
+
+def create_account(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    email = request.POST['email']
+    user = Account.objects.create_user(username, email, password)
+    login(request, user)
+    return render(request, 'payments/index.html', None)
