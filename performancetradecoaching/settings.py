@@ -85,6 +85,15 @@ DATABASES = {
     }
 }
 
+EMAIL_HOST = 'smtp.aol.com'
+
+
+EMAIL_PORT = 587
+
+EMAIL_HOST_USER = 'dylan5394@aim.com'
+EMAIL_HOST_PASSWORD = '' #Lets not store password here for everyone to see.
+EMAIL_USE_TLS = False
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

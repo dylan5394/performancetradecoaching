@@ -1,21 +1,23 @@
 {% load static %}
-
-<link rel="stylesheet" type="text/css" href="{% static 'payments/style.css' %}" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'payments/style.css' %}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
-    <div class="navbar">
-        <div id="logo">
-            <a href="/payments">
-                <img src="{% static "images/ptc_logo.png" %}" />
-            </a>
-        </div>
-        <nav id="main-nav">
-            <ul>
+    <nav clas="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/payments">
+                    <img class="img-responsive" src="{% static "images/ptc_logo.png" %}"/>
+                </a>
+            </div>
+            <ul class="nav navbar-nav">
                 <li><a href="/payments">Home</a></li>
                 <li><a href="/payments/company">Company</a></li>
                 <li><a href="/payments/about">About</a></li>
@@ -27,15 +29,15 @@
                     <li><a href="/payments/loginform">Login</a></li>
                 {% endif %}
             </ul>
-        </nav>
-    </div>
+        </div>
+    </nav>
     <div id="timed-images">
 
     </div>
     <hr>
     {% block content %}{% endblock content %}
     <div>
-        <button>Facebook link</button>
+        <button class="btn btn-primary">Facebook link</button>
     </div>
 </body>
 </html>
