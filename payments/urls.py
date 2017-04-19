@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^loginform$', views.login_page, name='loginpage'),
     url(r'^logout_request$', views.logout_request, name='logoutrequest'),
     url(r'^create_account$', views.create_account, name='createaccount'),
+    url(r'^add_comment$', views.add_comment, name='addcomment'),
+    url(r'^verify_email/(?P<code>.+)$', views.verify_email, name='verifyemail'),
 ]

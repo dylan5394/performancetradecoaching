@@ -11,7 +11,7 @@
             <input type="text" placeholder="Add a comment" name="body" required>
             <input type="submit" value="Post comment">
         </form>
-        {{ post.comment_set|format_comments }}
+        {{ post.comment_set|format_comments|safe }}
     {% endfor %}
     </body>
 {% endblock content %}
