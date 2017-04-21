@@ -1,17 +1,14 @@
 {% extends 'payments/index.html' %}
 {% load blog_formatting %}
 {% block content %}
-    <body>
-    {% for post in posts %}
-        <b>{{ post.title }}</b><br>
-        <i>{{ post.date }}</i><br>
-        <p>{{ post.body }}</p>
-        <form action="/payments/add-coment" method="post">
+    <b>{{ post.title }}</b><br>
+    <i>{{ post.date }}</i><br>
+    <p>{{ post.body }}</p>
+    <form action="/payments/add_coment" method="post">
         {% csrf_token %}
-            <input type="text" placeholder="Add a comment" name="body" required>
-            <input type="submit" value="Post comment">
-        </form>
-        {{ post.comment_set|format_comments|safe }}
-    {% endfor %}
-    </body>
+        <input type="text" placeholder="Add a comment" name="body" required>
+        <input type="hidden" name="blog_id" value="{{ post.id }}" required>
+        <input type="submit" value="Post comment">
+    </form>
+    {{ post.comment_set|format_comments|safe }}
 {% endblock content %}

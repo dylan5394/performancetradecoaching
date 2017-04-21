@@ -97,13 +97,18 @@ def verify_email(request, code):
 
 def blog_posts(request):
     posts = BlogPost.objects.all()
-    return render(request, 'payments/blog.html', {'posts': posts})
+    return render(request, 'payments/blogs.html', {'posts': posts})
+
+
+def blog_post(request, blog_id):
+    post = BlogPost.objects.get(id=blog_id)
+    return render(request, 'payments/blog.html', {'post': post})
 
 
 def add_comment(request):
     author = request.user
     body = request.POST['body']
-    blog_id = request.POST['blog-id']
+    blog_id = request.POST['blog_id']
     parent = BlogPost.objects.get(id=blog_id)
     comment = Comment(author=author, body=body, post=parent)
     comment.save()

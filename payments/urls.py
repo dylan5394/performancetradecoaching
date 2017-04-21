@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^company$', views.company, name='company'),
     url(r'^about$', views.about, name='about'),
     url(r'^blog$', views.blog_posts, name='blog'),
+    url(r'^blog/(?P<blog_id>.+)$', views.blog_post, name='blogpost'),
     url(r'^contact$', views.contact, name='contact'),
     url(r'^login$', views.login_request, name='loginrequest'),
     url(r'^loginform$', views.login_page, name='loginpage'),
