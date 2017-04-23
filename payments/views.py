@@ -45,7 +45,7 @@ def login_request(request):
         login(request, user)
         return render(request, 'payments/index.html', None)
     else:
-        return HttpResponse("Could not login")
+        return HttpResponse("User not found")
 
 
 def logout_request(request):
@@ -84,14 +84,13 @@ def verify_email(request, code):
     user = get_object_or_404(Account, activation_code=code)
     if not user.is_active:
         if timezone.now() > user.code_expires:
-            print("Expired") #TODO: Show error page here
-        else:
-            print("Activating user account")
+            return render(request, 'payments/error.html', {'error': 'Activation code expired.'})
+        else: #activate user account and log in.
             user.is_active = True
             user.save()
             login(request, user)
     else:
-        print("Code already used") #TODO: Show error page here
+        return render(request, 'payments/error.html', {'error': 'Activation code has been used already.'})
     return render(request, 'payments/index.html', None)
 
 
