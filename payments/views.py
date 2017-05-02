@@ -18,11 +18,11 @@ def index(request):
 
 
 def company(request):
-    return render(request, 'payments/company.html', None)
+    return render(request, 'payments/story.html', None)
 
 
 def about(request):
-    return render(request, 'payments/about.html', None)
+    return render(request, 'payments/work.html', None)
 
 
 def blog(request):
@@ -30,7 +30,7 @@ def blog(request):
 
 
 def contact(request):
-    return render(request, 'payments/contact.html', None)
+    return render(request, 'payments/testimonials.html', None)
 
 
 def login_page(request):

@@ -19,10 +19,10 @@
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="/payments">Home</a></li>
-                <li><a href="/payments/company">Company</a></li>
-                <li><a href="/payments/about">About</a></li>
-                <li><a href="/payments/blog">Blog</a></li>
-                <li><a href="/payments/contact">Contact</a></li>
+                <li><a href="#story">The Story</a></li>
+                <li><a href="#how">How We Work</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="/payments/logout_request">Log Out {{ user }}</a></li>
                 {% else %}
@@ -31,13 +31,36 @@
             </ul>
         </div>
     </nav>
-    <div id="timed-images">
-
+    <div id="hook">
+        <p>PTC is a new financial coaching service that will teach you how to transform your current trading system into one that is consistently profitable and help set your path to financial freedom.</p>
+        <br><p>Are you...</p>
+        <p>New to the financial markets?</p>
+        <p>An active trader wishing to improve performance or having difficulty with consistent profitability?</p>
+        <p>Frustrated because you are losing, experiencing wide swings or making money and giving it back?</p>
+        <p>Unsure of where to start have lost your confidence?</p>
+        <p>Experiencing discouragement with your trading, but know that with the right direction you can become successful?</p>
+        <br><p>Performance Trade Coaching is here to guide your evolution into a confident and profitable trader.</p>
+    </div>
+    <div id="part2">
+        <img src="#" />
+        <div id="offers">
+            <h12>PTC offers:</h12>
+            <p>A path to consistent profitability with any trade method.</p>
+            <p>Increased confidence to execute your trade plan with ease.</p>
+            <p>A personal and supportive learning environment.</p>
+            <p>A launch pad to get started in the financial markets.</p>
+            <p>Solutions to real time trade issues that are holding you back from achieving independence in trading the financial markets.</p>
+            <p>An approach to tame your mind and emotions so that you are able to make money in the markets.</p>
+            <p>A process to guide and encourage you to find what works specifically for your personality.</p>
+        </div>
     </div>
     <hr>
-    <div id="content">
-        {% block content %}{% endblock content %}
-    </div>
+
+    <div id="story">{% include "payments/story.html" %} </div>
+    <div id="how">{% include "payments/work.html" %}</div>
+    <div id="testimonials">{% include "payments/testimonials.html" %}</div>
+    <div id="contact">{% include "payments/contact.html" %}</div>
+
     <div>
         <button class="btn btn-primary">Facebook link</button>
     </div>
