@@ -10,7 +10,7 @@
     <title>Home</title>
 </head>
 <body>
-    <nav clas="navbar navbar-default">
+    <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/payments">
@@ -19,10 +19,10 @@
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="/payments">Home</a></li>
-                <li><a href="#story">The Story</a></li>
-                <li><a href="#how">How We Work</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#story-banner">The Story</a></li>
+                <li><a href="#how-banner">How We Work</a></li>
+                <li><a href="#testimonials-banner">Testimonials</a></li>
+                <li><a href="#contact-banner">Contact</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="/payments/logout_request">Log Out {{ user }}</a></li>
                 {% else %}
@@ -31,7 +31,7 @@
             </ul>
         </div>
     </nav>
-    <div id="hook">
+    <div id="hook" class="content">
         <p>PTC is a new financial coaching service that will teach you how to transform your current trading system into one that is consistently profitable and help set your path to financial freedom.</p>
         <br><p>Are you...</p>
         <p>New to the financial markets?</p>
@@ -43,8 +43,8 @@
     </div>
     <div id="part2">
         <img src="#" />
-        <div id="offers">
-            <h12>PTC offers:</h12>
+        <div id="offers" class="content">
+            <h8>PTC offers:</h8>
             <p>A path to consistent profitability with any trade method.</p>
             <p>Increased confidence to execute your trade plan with ease.</p>
             <p>A personal and supportive learning environment.</p>
@@ -54,15 +54,24 @@
             <p>A process to guide and encourage you to find what works specifically for your personality.</p>
         </div>
     </div>
-    <hr>
-
-    <div id="story">{% include "payments/story.html" %} </div>
-    <div id="how">{% include "payments/work.html" %}</div>
-    <div id="testimonials">{% include "payments/testimonials.html" %}</div>
-    <div id="contact">{% include "payments/contact.html" %}</div>
-
+    <div id="story-banner"></div>
+    <div class="story">
+        {% include "payments/story.html" %}
+    </div>
+    <div id="how-banner"></div>
+    <div class="how">
+        {% include "payments/work.html" %}
+    </div>
+    <div id="testimonials-banner"></div>
+    <div class="testimonials">
+        {% include "payments/testimonials.html" %}
+    </div>
+    <div id="contact-banner"></div>
+    <div class="contact">
+        {% include "payments/contact.html" %}
+    </div>
     <div>
-        <button class="btn btn-primary">Facebook link</button>
+        <button class="btn btn-primary" style="margin-left: 50%;">Facebook link</button>
     </div>
 </body>
 </html>

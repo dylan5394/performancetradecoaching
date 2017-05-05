@@ -17,20 +17,8 @@ def index(request):
     return render(request, 'payments/index.html', None)
 
 
-def company(request):
-    return render(request, 'payments/story.html', None)
-
-
-def about(request):
-    return render(request, 'payments/work.html', None)
-
-
 def blog(request):
     return render(request, 'payments/blog.html', None)
-
-
-def contact(request):
-    return render(request, 'payments/testimonials.html', None)
 
 
 def login_page(request):
