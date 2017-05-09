@@ -2,76 +2,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="{% static 'payments/style.css' %}" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'payments/style.css' %}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway"/>
     <meta charset="UTF-8">
     <title>Home</title>
+    <script type="text/javascript">
+        $(function() {
+            $('#scroll').click(function() {
+                $('html, body').animate({
+                    scrollTop: $("#offers-banner").offset().top
+                }, 2000);
+            });
+        });
+    </script>
 </head>
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/payments">
-                    <img class="img-responsive" src="{% static "images/ptc_logo.png" %}"/>
-                </a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="/payments">Home</a></li>
-                <li><a href="#story-banner">The Story</a></li>
-                <li><a href="#how-banner">How We Work</a></li>
-                <li><a href="#testimonials-banner">Testimonials</a></li>
-                <li><a href="#contact-banner">Contact</a></li>
-                {% if user.is_authenticated %}
-                    <li><a href="/payments/logout_request">Log Out {{ user }}</a></li>
-                {% else %}
-                    <li><a href="/payments/loginform">Login</a></li>
-                {% endif %}
-            </ul>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/payments">
+                <img class="img-responsive" src="{% static "images/ptc_logo.png" %}"/>
+            </a>
         </div>
-    </nav>
-    <div id="hook" class="content">
-        <p>PTC is a new financial coaching service that will teach you how to transform your current trading system into one that is consistently profitable and help set your path to financial freedom.</p>
-        <br><p>Are you...</p>
-        <p>New to the financial markets?</p>
-        <p>An active trader wishing to improve performance or having difficulty with consistent profitability?</p>
-        <p>Frustrated because you are losing, experiencing wide swings or making money and giving it back?</p>
-        <p>Unsure of where to start have lost your confidence?</p>
-        <p>Experiencing discouragement with your trading, but know that with the right direction you can become successful?</p>
-        <br><p>Performance Trade Coaching is here to guide your evolution into a confident and profitable trader.</p>
+        <ul class="nav navbar-nav">
+            <li><a href="/payments">Home</a></li>
+            <li><a href="#story-banner">The Story</a></li>
+            <li><a href="#how-banner">How We Work</a></li>
+            <li><a href="#testimonials-banner">Testimonials</a></li>
+            <li><a href="#contact-banner">Contact</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="/payments/logout_request">Log Out {{ user }}</a></li>
+            {% else %}
+                <li><a href="/payments/loginform">Login</a></li>
+            {% endif %}
+        </ul>
     </div>
-    <div id="part2">
-        <img src="#" />
-        <div id="offers" class="content">
-            <h8>PTC offers:</h8>
-            <p>A path to consistent profitability with any trade method.</p>
-            <p>Increased confidence to execute your trade plan with ease.</p>
-            <p>A personal and supportive learning environment.</p>
-            <p>A launch pad to get started in the financial markets.</p>
-            <p>Solutions to real time trade issues that are holding you back from achieving independence in trading the financial markets.</p>
-            <p>An approach to tame your mind and emotions so that you are able to make money in the markets.</p>
-            <p>A process to guide and encourage you to find what works specifically for your personality.</p>
+</nav>
+<div id="hook">
+<div class="container">
+    <div class="row text-center">
+        <span id="homepage-header-text"><b>Profitable Trading From The Inside Out</b></span>
+    </div>
+    <br>
+    <div class="row">
+        <p id="homepage-subheader-text"><b>Performance Trade Coaching</b> is a new <b>financial coaching service</b>
+            that teaches you how to transform
+            your current trading system into one that's <b>consistently profitable</b> and helps set the path to <b>financial
+                freedom</b>.</p>
+    </div>
+    <br>
+    <div class="row">
+        <div id="portrait-text">
+            <b>
+                <p>Are you...</p>
+                <p>New to the financial markets?</p>
+                <p>An active trader having difficulty with consistent profitability?</p>
+                <p>Frustrated by losing money or experiencing wide swings?</p>
+                <p>Unsure of where to start?</p>
+            </b>
+            <br>
+            <p>If you struggle with any of these issues then <b>Performance Trade Coaching</b> can help guide you to becoming
+                a more confident and profitable trader. Know that with the right direction you too can become a success
+                story!</p>
+        </div>
+        <div id="portrait-div">
+            <img id="portrait" src="{% static "images/portrait.png" %}"/>
         </div>
     </div>
-    <div id="story-banner"></div>
-    <div class="story">
-        {% include "payments/story.html" %}
+    <div class="row">
+        <span id="scroll">Learn More</span>
     </div>
-    <div id="how-banner"></div>
-    <div class="how">
-        {% include "payments/work.html" %}
-    </div>
-    <div id="testimonials-banner"></div>
-    <div class="testimonials">
-        {% include "payments/testimonials.html" %}
-    </div>
-    <div id="contact-banner"></div>
-    <div class="contact">
-        {% include "payments/contact.html" %}
-    </div>
-    <div>
-        <button class="btn btn-primary" style="margin-left: 50%;">Facebook link</button>
-    </div>
+</div>
+</div>
+{% include "payments/offers.html" %}
+{% include "payments/story.html" %}
+{% include "payments/work.html" %}
+{% include "payments/testimonials.html" %}
+{% include "payments/contact.html" %}
+<div>
+    <button class="btn btn-primary" style="margin-left: 50%;">Facebook link</button>
+</div>
 </body>
 </html>

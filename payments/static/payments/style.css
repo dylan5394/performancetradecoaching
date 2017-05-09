@@ -1,3 +1,12 @@
+:root {
+    --banner-height: 10vh;
+}
+
+@font-face {
+    font-family: "AgencyFBRegular";
+    src: url("../fonts/univers-bold.ttf")
+}
+
 .navbar-header {
     max-height: 20%;
     max-width: 20%;
@@ -11,8 +20,93 @@
     color: gray;
 }
 
+.last-p {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.header-text {
+    font-family: Roboto, serif;
+    font-size: 24pt;
+    font-style: italic;
+    padding-left: 3vw;
+}
+
+.content {
+    padding-left: 3vw;
+}
+
+hr {
+    border: none !important;
+    color: white !important;
+    background-color: white !important;
+    height: 2px !important;
+}
+
+#portrait-div {
+    float: right;
+}
+
+#portrait-text {
+    float: left;
+    font-size: 17pt;
+    width: 70%;
+}
+
+#portrait {
+    zoom: 12%;
+}
+
+#logo-div {
+    float: left;
+}
+
+#circle-logo {
+    zoom: 30%;
+}
+
+#offers-content {
+    float: right;
+}
+
+#homepage-header-text {
+    color: white;
+    font-size: 31pt;
+    font-family: Raleway, serif;
+}
+
+#homepage-subheader-text {
+    color: white;
+    font-size: 21pt;
+    font-family: Raleway, serif;
+}
+
+#hook {
+    background: #55d1ff;
+    background: -moz-linear-gradient(left, #55d1ff 0%, #42c6fa 25%, #6ba7f8 50%, #3c75f9 75%, #3620ad 100%);
+    background: -webkit-linear-gradient(left, #55d1ff 0%, #42c6fa 25%, #6ba7f8 50%, #3c75f9 75%, #3620ad 100%);
+    background: linear-gradient(to right, #55d1ff 0%, #42c6fa 25%, #6ba7f8 50%, #3c75f9 75%, #3620ad 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#55d1ff', endColorstr='#3620ad', GradientType=1);
+}
+
+#offers-banner {
+    height: var(--banner-height);
+    width: 100%;
+    text-align: right;
+    color: white;
+    background: #55d2ff;
+    background: -moz-linear-gradient(left, #55d2ff 0%, #42c6fa 25%, #6ba8f8 50%, #3c74f9 75%, #3520ad 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, #55d2ff), color-stop(25%, #42c6fa), color-stop(50%, #6ba8f8), color-stop(75%, #3c74f9), color-stop(100%, #3520ad));
+    background: -webkit-linear-gradient(left, #55d2ff 0%, #42c6fa 25%, #6ba8f8 50%, #3c74f9 75%, #3520ad 100%);
+    background: -o-linear-gradient(left, #55d2ff 0%, #42c6fa 25%, #6ba8f8 50%, #3c74f9 75%, #3520ad 100%);
+    background: -ms-linear-gradient(left, #55d2ff 0%, #42c6fa 25%, #6ba8f8 50%, #3c74f9 75%, #3520ad 100%);
+    background: linear-gradient(to right, #55d2ff 0%, #42c6fa 25%, #6ba8f8 50%, #3c74f9 75%, #3520ad 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#55d2ff', endColorstr='#3520ad', GradientType=1);
+}
+
 #story-banner {
-    height: 5vh;
+    clear: both;
+    height: var(--banner-height);
     width: 100%;
     background-color: #82c9c1;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#82c9c1, endColorstr=#6ba7d1);
@@ -25,7 +119,7 @@
 }
 
 #how-banner {
-    height: 5vh;
+    height: var(--banner-height);
     background-color: #95ec8f;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#95ec8f, endColorstr=#ec3f2e);
     background-image: -moz-linear-gradient(left, #95ec8f 0%, #f38230 50%, #ec3f2e 100%);
@@ -37,7 +131,7 @@
 }
 
 #testimonials-banner {
-    height: 5vh;
+    height: var(--banner-height);
     background-color: #9198cc;
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr=#9198cc, endColorstr=#7b56a5);
     background-image: -moz-linear-gradient(left, #9198cc 0%, #407ad4 50%, #7b56a5 100%);
@@ -46,17 +140,6 @@
     background-image: -o-linear-gradient(left, #9198cc 0%, #407ad4 50%, #7b56a5 100%);
     background-image: -ms-linear-gradient(left, #9198cc 0%, #407ad4 50%, #7b56a5 100%);
     background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0%, #9198cc), color-stop(50%, #407ad4), color-stop(100%, #7b56a5));
-}
-
-.header-text {
-    font-family: Roboto, serif;
-    font-size: 24pt;
-    font-style: italic;
-    padding-left: 3vw;
-}
-
-.content {
-    padding-left: 3vw;
 }
 
 .story {
@@ -90,16 +173,4 @@
     background: -ms-linear-gradient(left, rgba(145, 152, 204, 0.3) 0%, rgba(255, 255, 255, 0.51) 30%, rgba(255, 255, 255, 1) 100%);
     background: linear-gradient(to right, rgba(145, 152, 204, 0.3) 0%, rgba(255, 255, 255, 0.51) 30%, rgba(255, 255, 255, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9198cc', endColorstr='#ffffff', GradientType=1);
-}
-
-hr {
-    border: none !important;
-    color: white !important;
-    background-color: white !important;
-    height: 2px !important;
-}
-
-.last-p {
-    padding-bottom: 0;
-    margin-bottom: 0;
 }
